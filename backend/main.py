@@ -1,22 +1,9 @@
 from fastapi import FastAPI
 from app.api import user, profile
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
-from fastapi.middleware.cors import CORSMiddleware
-
-# Configuration of allowed origins for CORS
-origins = [
-    "http://localhost:5173",
-]
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Include the routes from API modules
 app.include_router(user.router, prefix="/users", tags=["users"])
