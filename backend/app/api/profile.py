@@ -8,7 +8,7 @@ router = APIRouter()
 # List of example profiles to simulate the database
 fake_profiles_db: List[ProfileInDB] = []
 
-@router.post("/profiles/", response_model=Profile)
+@router.post("/", response_model=Profile, summary="Create a new profile")
 def create_profile(profile: ProfileCreate):
     """
     Create a new profile.
@@ -28,7 +28,7 @@ def create_profile(profile: ProfileCreate):
     fake_profiles_db.append(new_profile)
     return new_profile
 
-@router.get("/profiles/{profile_id}", response_model=Profile)
+@router.get("/{profile_id}", response_model=Profile, summary="Get a profile by its ID")
 def read_profile(profile_id: int):
     """
     Get a profile by its ID.
@@ -44,7 +44,7 @@ def read_profile(profile_id: int):
         raise HTTPException(status_code=404, detail="Profile not found")
     return profile
 
-@router.put("/profiles/{profile_id}", response_model=Profile)
+@router.put("/profiles/{profile_id}", response_model=Profile, summary="Update a profile by its ID")
 def update_profile(profile_id: int, profile: ProfileUpdate):
     """
     Update a profile by its ID.
@@ -66,7 +66,7 @@ def update_profile(profile_id: int, profile: ProfileUpdate):
 
     return existing_profile
 
-@router.delete("/profiles/{profile_id}", response_model=Profile)
+@router.delete("/{profile_id}", response_model=Profile, summary="Delete a profile by its ID")
 def delete_profile(profile_id: int):
     """
     Delete a profile by its ID.
@@ -83,7 +83,7 @@ def delete_profile(profile_id: int):
     fake_profiles_db.remove(profile)
     return profile
 
-@router.get("/profiles/", response_model=List[ProfileInDB])
+@router.get("/", response_model=List[ProfileInDB], summary="Get a list of all profiles")
 def get_profiles():
     """
     Get a list of all profiles.
