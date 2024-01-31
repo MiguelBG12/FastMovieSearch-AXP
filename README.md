@@ -1,35 +1,50 @@
-# Upwork - Entry Exam
+# FastMovieSearch-AXP Backend
 
-## Goal
-Working FastAPI API with a User and Profile models and schemas.
+This repository contains the backend implementation for the FastMovieSearch-AXP project.
 
-## Instructions
-1. Fork this repository
-2. Complete the tasks below adhering to the requirements
-3. Submit a pull request with your solution in your forked repository
-4. Deliver a GitHub repository with your solution (it can be private, just give access to @arielaco)
+## Table of Contents
 
-## Tasks
-- [ ] Create a [User](###User) and [Profile](###Profile) models and schemas 
-- [ ] Develop a REST API exposing CRUD endpoints for both models
-- [ ] Test at least 2 endpoints using pytest (with fixtures)
-- [ ] Point docs to root path
-- [ ] Create requirements file
-- [ ] Add a section on `README.md` with setup (venv), install (pip), run and testing instructions
+- [Description](#description)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
 
-### User
-- Email as username
-- Can have multiple profiles
-- Can have a list of favorite profiles
+## Description
 
-### Profile
-- It has a name and a description
-- Belongs to a user
+Provide a brief description of your project here.
 
 ## Requirements
-- Use English for all code, comments, commit messages, and documentation
-- Delete dead code (unrelated to tasks)
-- All responses must be JSON
-- Implement proper folder structure
-- Validation must be done using Pydantic
-- Use multiple commits (when possible, use conventional commit messages)
+
+List the requirements for running the project. Include information about Python version, dependencies, etc.
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <https://github.com/MiguelBG12/FastMovieSearch-AXP>
+cd FastMovieSearch-AXP/backend
+
+2. Create and activate a virtual environment:
+
+python -m venv venv
+source venv/bin/activate  # For Linux/Mac
+venv\Scripts\activate  # For Windows
+
+3. Install dependencies:
+
+pip install -r requirements.txt
+
+4. Usage:
+
+
+5. Testing:
+
+pytest
+
+
+
