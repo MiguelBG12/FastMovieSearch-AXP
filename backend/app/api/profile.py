@@ -44,7 +44,7 @@ def read_profile(profile_id: int):
         raise HTTPException(status_code=404, detail="Profile not found")
     return profile
 
-@router.put("/profiles/{profile_id}", response_model=Profile, summary="Update a profile by its ID")
+@router.put("/{profile_id}", response_model=Profile, summary="Update a profile by its ID")
 def update_profile(profile_id: int, profile: ProfileUpdate):
     """
     Update a profile by its ID.
