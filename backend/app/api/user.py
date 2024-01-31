@@ -8,7 +8,7 @@ router = APIRouter()
 # List of example users to simulate the database
 fake_users_db: List[UserInDB] = []
 
-@router.post("/users/", response_model=User)
+@router.post("/", response_model=User, summary="Create a new user")
 def create_user(user: UserCreate):
     """
     Create a new user.
@@ -28,7 +28,7 @@ def create_user(user: UserCreate):
     fake_users_db.append(new_user)
     return new_user
 
-@router.get("/users/{user_id}", response_model=UserInDB)
+@router.get("/{user_id}", response_model=UserInDB, summary="Get user by ID")
 def read_user(user_id: int):
     """
     Get a user by its ID.
@@ -44,7 +44,7 @@ def read_user(user_id: int):
         raise HTTPException(status_code=404, detail="User not found")
     return user
 
-@router.put("/users/{user_id}", response_model=UserInDB)
+@router.put("/{user_id}", response_model=UserInDB, summary="Update one user")
 def update_user(user_id: int, user: UserUpdate):
     """
     Update a user by its ID.
@@ -67,7 +67,7 @@ def update_user(user_id: int, user: UserUpdate):
 
     return existing_user
 
-@router.delete("/users/{user_id}", response_model=UserInDB)
+@router.delete("/{user_id}", response_model=UserInDB, summary="Delete one user")
 def delete_user(user_id: int):
     """
     Delete a user by its ID.
@@ -84,7 +84,7 @@ def delete_user(user_id: int):
     fake_users_db.remove(user)
     return user
 
-@router.get("/users/", response_model=List[UserInDB])
+@router.get("/", response_model=List[UserInDB], summary="Retrieve all the users")
 def get_users():
     """
     Get a list of all users.
