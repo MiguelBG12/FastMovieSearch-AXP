@@ -1,50 +1,37 @@
-# FastMovieSearch-AXP Backend
+# Test AXP
 
-This repository contains the backend implementation for the FastMovieSearch-AXP project.
+## Goal
 
-## Table of Contents
+    Working FastAPI API with a User and Profile models and schemas.
 
-- [Description](#description)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
+## Clone this repository to your computer**
 
-## Description
+    # Command
+    git clone <https://github.com/MiguelBG12/First-AXP-test>
 
-Provide a brief description of your project here.
+#### Create the virtual environment**
 
-## Requirements
+        # Install virtualenv from terminal
+        pip install virtualenv
 
-List the requirements for running the project. Include information about Python version, dependencies, etc.
+        # Navigate to the directory
+        > cd backend/
 
-## Installation
+        # Create the virtual environment
+        > python3 -m venv venv
 
-1. Clone the repository:
+        # Activate the virtual environment
+        > source venv/Scripts/activate
 
-```bash
-git clone <https://github.com/MiguelBG12/FastMovieSearch-AXP>
-cd FastMovieSearch-AXP/backend
+        # Install the dependencies
+        > pip install -r requirements.txt
 
-2. Create and activate a virtual environment:
+### Start the Backend (FastAPI):**
 
-python -m venv venv
-source venv/bin/activate  # For Linux/Mac
-venv\Scripts\activate  # For Windows
-
-3. Install dependencies:
-
-pip install -r requirements.txt
-
-4. Usage:
+        # Root: "backend/"
+        uvicorn uvicorn main:app --reload
 
 
-5. Testing:
+# Author:
 
-pytest
-
-
-
+#### Miguel Bautista: https://www.linkedin.com/in/miguelbautistag/
